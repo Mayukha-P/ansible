@@ -1,0 +1,27 @@
+- name: Demo on conditions 
+  hosts: all  
+  vars:   
+    action: true
+    foo: fantastic
+    name: mayukha
+  tasks: 
+    - name: Run this when os is centos 
+      ansible.builtin.debug: 
+        msg: Hai from centos  
+      when: action
+
+    - name: Run the command if "foo" is defined
+      ansible.builtin.shell: echo "I've got '{{ foo }}' and am not afraid to use it!"
+      when: foo is defined 
+    
+    - name: Run the command if "name" is defined
+      ansible.builtin.shell: echo "Welcome '{{ name }}'"
+      when: name is defined
+
+    - name: Run the command if "name" is undefined
+      ansible.builtin.shell: echo "I am unknown please name me!!"
+      when: name is undefined  
+
+    - name: Run the command if "foo" is undefined
+      ansible.builtin.shell: I am foo and why am I undefined
+      when: foo is undefined 
