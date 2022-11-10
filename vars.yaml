@@ -16,7 +16,7 @@
 
     - name: The component is 
       ansible.builtin.debug:
-        msg: Value of URL is {{ Component }}
+        msg: Component is {{ Component }}
 
     - name: Printing the URL with quotes 
       ansible.builtin.debug:
