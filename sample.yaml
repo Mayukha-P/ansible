@@ -13,7 +13,7 @@
   hosts: dev 
   tasks:
     - name: Print fruits
-      ansible.builtin.debug:
+      
             -apple
             -mango
             -strawberry
