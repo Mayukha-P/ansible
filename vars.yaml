@@ -1,7 +1,8 @@
 - name: Demo on using vairables 
   hosts: all 
   vars:                            # Play-level variables 
-    URL: play.google.com      
+    URL: ping.amazon.com 
+    Component:  redis    
   vars_files:
     - demo-vars-files.yaml
   tasks: 
@@ -12,6 +13,10 @@
     - name: Printing the URL with space 
       ansible.builtin.debug:
         msg: Value of URL is {{ URL }}
+
+     - name: The component is : 
+      ansible.builtin.debug:
+        msg: Value of URL is {{ Component }}
 
     - name: Printing the URL with quotes 
       ansible.builtin.debug:
