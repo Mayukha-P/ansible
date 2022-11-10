@@ -13,7 +13,5 @@
   hosts: dev 
   tasks:
     - name: Print fruits
-      
-            -apple
-            -mango
-            -strawberry
+      ansible.builtin.debug:
+            msg: Hai from dev task1 of play2
