@@ -14,7 +14,7 @@
       ansible.builtin.debug:
         msg: Value of URL is {{ URL }}
 
-     - name: The component is : 
+    - name: The component is : 
       ansible.builtin.debug:
         msg: Value of URL is {{ Component }}
 
