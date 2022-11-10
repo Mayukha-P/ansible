@@ -1,0 +1,6 @@
+-name: playbook1
+hosts: all
+tasks: print fruit names
+    -grapes
+    -mangoes
+    -apples
