@@ -18,7 +18,7 @@
         region: "{{ region }}"
         instance_tags:
         Name: ansible-drurun
-      register: ec2
+       register: ec2
 
     - name: Adding instance to the host group
       add_host:
