@@ -8,17 +8,17 @@
     image: "ami-0fa1ba08307b907ac"             # Update this with the AMI ID in your account which has ansible installed.
     region: "us-east-1"
   tasks:
-  - name: Launching instance
-    amazon.aws.ec2:
-        count: 1
-        group_id: "{{ security_group_id }}"
-        instance_type: "{{ instance_type }}"
-        image: "{{ image }}"
-        wait: true
-        region: "{{ region }}"
-        instance_tags:
-        Name: ansible-drurun
-       register: ec2
+    - name: Launching instance
+      amazon.aws.ec2:
+         count: 1
+         group_id: "{{ security_group_id }}"
+         instance_type: "{{ instance_type }}"
+         image: "{{ image }}"
+         wait: true
+         region: "{{ region }}"
+         instance_tags:
+          Name: ansible-drurun
+      register: ec2
 
     - name: Adding instance to the host group
       add_host:
